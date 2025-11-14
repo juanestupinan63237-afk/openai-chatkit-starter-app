@@ -7,15 +7,15 @@
 }
 
 :root[data-color-scheme="dark"] {
-  --background: #black;
-  --foreground: #white;
+  --background: #000000;
+  --foreground: #FFFFFF;
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-color-scheme]) {
-    --background: #black;
-    --foreground: #white;
+  --background: #000000;
+  --foreground: #FFFFFF;
     color-scheme: dark;
   }
 }
