@@ -1,32 +1,42 @@
 @import "tailwindcss";
 
+/* 🌞 Light mode (calm & clean) */
 :root {
-  --background: #white;
-  --foreground: #black;
+  --background: #fafafa;     /* blanco suave */
+  --foreground: #2b2b2b;     /* gris cálido */
+  --accent: #4f86c6;         /* azul emocionalmente estable */
   color-scheme: light;
 }
 
+/* 🌙 Dark mode (calm & safe) */
 :root[data-color-scheme="dark"] {
-  --background: #000000;
-  --foreground: #FFFFFF;
+  --background: #121416;     /* gris oscuro suave, nada agresivo */
+  --foreground: #e5e7eb;     /* gris claro cálido */
+  --accent: #80b7ff;         /* azul pastel calmante */
   color-scheme: dark;
 }
 
+/* ★ Automatic dark mode if user prefers it */
 @media (prefers-color-scheme: dark) {
   :root:not([data-color-scheme]) {
-  --background: #000000;
-  --foreground: #FFFFFF;
+    --background: #121416;
+    --foreground: #e5e7eb;
+    --accent: #80b7ff;
     color-scheme: dark;
   }
 }
 
+/* Tailwind variables */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+
   --font-sans: Arial, Helvetica, sans-serif;
   --font-mono: SFMono-Regular, Consolas, "Liberation Mono", monospace;
 }
 
+/* Applies colors globally */
 body {
   background: var(--background);
   color: var(--foreground);
